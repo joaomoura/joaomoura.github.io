@@ -65,6 +65,9 @@
         .attr('alt', 'Logo DP6');
       lb.find('.lightbox-title').text('Contato enviado');
       lbContent.html('Obrigado pelo seu contato!').scrollTop(0);
+      if(!checkIfInputsFormAllFilleds()) {
+        lbContent.html('Atenção! Os campos precisam ser preenchidos.').scrollTop(0);
+      }
       sendEventAnalyticsForm();
       setTimeout(function () {
         body.addClass('lightbox-open');
